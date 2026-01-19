@@ -1,11 +1,15 @@
 <div align="center">
 
   <h1>♛ Simulador: El Problema de las 8 Reinas</h1>
-  
-  <p>
-    Una aplicación web interactiva para visualizar y resolver el clásico desafío algorítmico de ajedrez.
-  </p>
+
+
 </div>
+
+  <p align="center">
+    Una aplicación web interactiva para visualizar y resolver el clásico desafío algorítmico de ajedrez.
+    
+  </p>
+
 
 ---
 
@@ -19,7 +23,7 @@ La aplicación permite al usuario intentar resolver el puzzle manualmente median
 
 | Funcionalidad | Descripción |
 | :--- | :--- |
-| **👆 Drag & Drop** | Mecánica fluida para arrastrar reinas desde la banca al tablero. |
+| **👆 Point and click** | Mecánica fluida para colocar reinas dando click. |
 | **🛡️ Validación Lógica** | El sistema impide colocar una reina si está siendo atacada (reglas de ajedrez). |
 | **🔴 Visualización de Ataques** | Las celdas amenazadas se iluminan en rojo y bloquean el cursor. |
 | **🎨 Temas Personalizables** | Selección de colores para el tablero y skins (apariencia) para las reinas. |
