@@ -1,10 +1,10 @@
 var contador = 0;
 var colorReina = 1;
-var colorOscuro = "#ffc0cb"; // pink
-var colorClaro = "#f5f5dc"; // beige
-var usandoSolucionPredefinida = false; // Nueva variable para detectar soluciones predefinidas
+var colorClaro = "#f5f5dc"; // beige - CASILLAS CLARAS
+var colorOscuro = "#ffc0cb"; // pink - CASILLAS OSCURAS
+var usandoSolucionPredefinida = false;
 
-// Inicializar el tablero con colorOscuros por defecto
+// Inicializar el tablero con colores correctos
 function inicializarTablero() {
     const tabla = document.querySelector('.tablero');
     const filas = tabla.querySelectorAll('tr');
@@ -12,17 +12,18 @@ function inicializarTablero() {
     filas.forEach((fila, i) => {
         const celdas = fila.querySelectorAll('td');
         celdas.forEach((celda, j) => {
+            // (0,0) debe ser CLARO (beige)
             if ((i + j) % 2 === 0) {
-                celda.style.backgroundColor = colorOscuro;
+                celda.style.backgroundColor = colorClaro; // beige
             } else {
-                celda.style.backgroundColor = colorClaro;
+                celda.style.backgroundColor = colorOscuro; // pink
             }
         });
     });
 }
 
-// Actualizar colorOscuros del tablero
-function actualizarcolorOscurosTablero() {
+// Actualizar colores del tablero
+function actualizarColoresTablero() {
     const tabla = document.querySelector('.tablero');
     const filas = tabla.querySelectorAll('tr');
     
@@ -30,9 +31,9 @@ function actualizarcolorOscurosTablero() {
         const celdas = fila.querySelectorAll('td');
         celdas.forEach((celda, j) => {
             if ((i + j) % 2 === 0) {
-                celda.style.backgroundColor = colorOscuro;
+                celda.style.backgroundColor = colorClaro; // beige
             } else {
-                celda.style.backgroundColor = colorClaro;
+                celda.style.backgroundColor = colorOscuro; // pink
             }
         });
     });
@@ -326,7 +327,6 @@ function limpiarPreviewAtaques() {
 
 // Manejar hover sobre celdas
 function cellHover(celda) {
-    // Solo mostrar preview si la celda está vacía y no atacada
     if (!celda.classList.contains('reina') && !celda.classList.contains('atacada') && contador < 8) {
         const pos = obtenerPosicion(celda);
         if (pos) {
@@ -342,7 +342,6 @@ function cellLeave() {
 
 // Verificar si hay reinas atacándose entre sí
 function verificarVictoria() {
-    // Solo verificar si hay exactamente 8 reinas y no se usó solución predefinida
     if (contador !== 8 || usandoSolucionPredefinida) {
         return false;
     }
@@ -351,7 +350,6 @@ function verificarVictoria() {
     const filas = tabla.querySelectorAll('tr');
     const posicionesReinas = [];
     
-    // Obtener todas las posiciones de las reinas
     filas.forEach((fila, i) => {
         const celdas = fila.querySelectorAll('td');
         celdas.forEach((celda, j) => {
@@ -361,19 +359,13 @@ function verificarVictoria() {
         });
     });
     
-    // Verificar que ninguna reina ataque a otra
     for (let i = 0; i < posicionesReinas.length; i++) {
         for (let j = i + 1; j < posicionesReinas.length; j++) {
             const reina1 = posicionesReinas[i];
             const reina2 = posicionesReinas[j];
             
-            // Misma fila
             if (reina1.fila === reina2.fila) return false;
-            
-            // Misma columna
             if (reina1.columna === reina2.columna) return false;
-            
-            // Misma diagonal
             if (Math.abs(reina1.fila - reina2.fila) === Math.abs(reina1.columna - reina2.columna)) {
                 return false;
             }
@@ -385,7 +377,6 @@ function verificarVictoria() {
 
 // Mostrar mensaje de victoria
 function mostrarMensajeVictoria() {
-    // Crear overlay oscuro
     const overlay = document.createElement('div');
     overlay.style.cssText = `
         position: fixed;
@@ -401,7 +392,6 @@ function mostrarMensajeVictoria() {
         animation: fadeIn 0.3s ease;
     `;
     
-    // Crear mensaje
     const mensaje = document.createElement('div');
     mensaje.style.cssText = `
         background: linear-gradient(90deg, #ff69b4 0%, #ff1493 50%, #ff69b4 100%);
@@ -439,7 +429,6 @@ function mostrarMensajeVictoria() {
     overlay.appendChild(mensaje);
     document.body.appendChild(overlay);
     
-    // Agregar estilos de animación
     const style = document.createElement('style');
     style.textContent = `
         @keyframes fadeIn {
@@ -464,7 +453,6 @@ function cerrarMensajeVictoria() {
 
 // Función para colocar/quitar reinas
 function cellClick(celda) {
-    // No permitir colocar reina en casilla atacada
     if (celda.classList.contains('atacada')) {
         return;
     }
@@ -483,17 +471,13 @@ function cellClick(celda) {
             }
             
             contador++;
-            
-            // Limpiar preview antes de marcar ataques permanentes
             limpiarPreviewAtaques();
             
-            // Marcar casillas atacadas
             const pos = obtenerPosicion(celda);
             if (pos) {
                 marcarAtaques(pos.fila, pos.columna);
             }
             
-            // Verificar victoria después de colocar la reina
             if (verificarVictoria()) {
                 setTimeout(() => {
                     mostrarMensajeVictoria();
@@ -505,8 +489,6 @@ function cellClick(celda) {
         celda.classList.remove('reina');
         celda.style.color = "";
         contador--;
-        
-        // Recalcular ataques
         recalcularAtaques();
     }
 }
@@ -524,24 +506,23 @@ function resetBoard() {
     });
 
     contador = 0;
-    usandoSolucionPredefinida = false; // Resetear al reiniciar manualmente
+    usandoSolucionPredefinida = false;
     
-    // Reiniciar colorOscuros a valores por defecto
+    // Valores por defecto CORRECTOS
     colorClaro = "#f5f5dc"; // beige
     colorOscuro = "#ffc0cb"; // pink
     
-    // Actualizar los selectores de color
-    document.getElementById('color1').value = colorOscuro;
-    document.getElementById('color2').value = colorClaro;
-    
-    // Aplicar los colorOscuros al tablero
-    actualizarcolorOscurosTablero();
+    // Actualizar selectores de color CORRECTOS
+    document.getElementById('colorClaro').value = colorClaro;
+    document.getElementById('colorOscuro').value = colorOscuro;
+
+    actualizarColoresTablero();
 }
 
-// Soluciones predefinidas para 8Reinas
+// Soluciones predefinidas
 function solveEightQueens1() {
     resetBoard();
-    usandoSolucionPredefinida = true; // Marcar que se usó solución predefinida
+    usandoSolucionPredefinida = true;
     const positions = [0, 4, 7, 5, 2, 6, 1, 3];
     positions.forEach((col, row) => {
         const celda = obtenerCelda(row, col);
@@ -551,7 +532,7 @@ function solveEightQueens1() {
 
 function solveEightQueens2() {
     resetBoard();
-    usandoSolucionPredefinida = true; // Marcar que se usó solución predefinida
+    usandoSolucionPredefinida = true;
     const positions = [3, 1, 6, 4, 0, 7, 5, 2];
     positions.forEach((col, row) => {
         const celda = obtenerCelda(row, col);
@@ -561,7 +542,7 @@ function solveEightQueens2() {
 
 function solveEightQueens3() {
     resetBoard();
-    usandoSolucionPredefinida = true; // Marcar que se usó solución predefinida
+    usandoSolucionPredefinida = true;
     const positions = [5, 1, 6, 0, 3, 7, 4, 2];
     positions.forEach((col, row) => {
         const celda = obtenerCelda(row, col);
@@ -569,26 +550,25 @@ function solveEightQueens3() {
     });
 }
 
-// Event listeners para los selectores de color
+// Event listeners
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar el tablero
     inicializarTablero();
     
-    // Listener para color claro
-    const color1 = document.getElementById('color1');
-    color1.addEventListener('input', function() {
-        colorOscuro = this.value;
-        actualizarcolorOscurosTablero();
-    });
-    
-    // Listener para color oscuro
-    const color2 = document.getElementById('color2');
-    color2.addEventListener('input', function() {
+    // Listener para color CLARO (beige)
+    const colorClaroInput = document.getElementById('colorClaro');
+    colorClaroInput.addEventListener('input', function() {
         colorClaro = this.value;
-        actualizarcolorOscurosTablero();
+        actualizarColoresTablero();
     });
     
-    // Agregar event listeners de hover a todas las celdas
+    // Listener para color OSCURO (pink)
+    const colorOscuroInput = document.getElementById('colorOscuro');
+    colorOscuroInput.addEventListener('input', function() {
+        colorOscuro = this.value;
+        actualizarColoresTablero();
+    });
+    
+    // Agregar hover listeners
     const tabla = document.querySelector('.tablero');
     const celdas = tabla.querySelectorAll('td');
     
@@ -601,5 +581,4 @@ document.addEventListener('DOMContentLoaded', function() {
             cellLeave();
         });
     });
-    
 });
