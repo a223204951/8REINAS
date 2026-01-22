@@ -2,6 +2,7 @@ var contador = 0;
 var colorReina = 1;
 var colorOscuro = "#ffc0cb"; // pink
 var colorClaro = "#f5f5dc"; // beige
+var usandoSolucionPredefinida = false; // Nueva variable para detectar soluciones predefinidas
 
 // Inicializar el tablero con colorOscuros por defecto
 function inicializarTablero() {
@@ -339,6 +340,128 @@ function cellLeave() {
     limpiarPreviewAtaques();
 }
 
+// Verificar si hay reinas atacándose entre sí
+function verificarVictoria() {
+    // Solo verificar si hay exactamente 8 reinas y no se usó solución predefinida
+    if (contador !== 8 || usandoSolucionPredefinida) {
+        return false;
+    }
+    
+    const tabla = document.querySelector('.tablero');
+    const filas = tabla.querySelectorAll('tr');
+    const posicionesReinas = [];
+    
+    // Obtener todas las posiciones de las reinas
+    filas.forEach((fila, i) => {
+        const celdas = fila.querySelectorAll('td');
+        celdas.forEach((celda, j) => {
+            if (celda.classList.contains('reina')) {
+                posicionesReinas.push({ fila: i, columna: j });
+            }
+        });
+    });
+    
+    // Verificar que ninguna reina ataque a otra
+    for (let i = 0; i < posicionesReinas.length; i++) {
+        for (let j = i + 1; j < posicionesReinas.length; j++) {
+            const reina1 = posicionesReinas[i];
+            const reina2 = posicionesReinas[j];
+            
+            // Misma fila
+            if (reina1.fila === reina2.fila) return false;
+            
+            // Misma columna
+            if (reina1.columna === reina2.columna) return false;
+            
+            // Misma diagonal
+            if (Math.abs(reina1.fila - reina2.fila) === Math.abs(reina1.columna - reina2.columna)) {
+                return false;
+            }
+        }
+    }
+    
+    return true;
+}
+
+// Mostrar mensaje de victoria
+function mostrarMensajeVictoria() {
+    // Crear overlay oscuro
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        animation: fadeIn 0.3s ease;
+    `;
+    
+    // Crear mensaje
+    const mensaje = document.createElement('div');
+    mensaje.style.cssText = `
+        background: linear-gradient(90deg, #ff69b4 0%, #ff1493 50%, #ff69b4 100%);
+        padding: 40px 60px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(255, 105, 180, 0.5);
+        text-align: center;
+        animation: slideIn 0.5s ease;
+    `;
+    
+    mensaje.innerHTML = `
+        <h2 style="color: white; font-size: 48px; margin: 0 0 20px 0; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+            ¡HAS GANADO! ☆
+        </h2>
+        <p style="color: white; font-size: 20px; margin: 0 0 25px 0; font-family: Arial, sans-serif;">
+            ¡Felicidades! :3
+            Has resuelto el desafío de las 8 reinas
+        </p>
+        <button onclick="cerrarMensajeVictoria()" style="
+            padding: 12px 30px;
+            font-size: 16px;
+            background: white;
+            color: #ff1493;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            Continuar
+        </button>
+    `;
+    
+    overlay.appendChild(mensaje);
+    document.body.appendChild(overlay);
+    
+    // Agregar estilos de animación
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Cerrar mensaje de victoria
+function cerrarMensajeVictoria() {
+    const overlay = document.querySelector('div[style*="position: fixed"]');
+    if (overlay) {
+        overlay.remove();
+    }
+}
+
 // Función para colocar/quitar reinas
 function cellClick(celda) {
     // No permitir colocar reina en casilla atacada
@@ -369,6 +492,13 @@ function cellClick(celda) {
             if (pos) {
                 marcarAtaques(pos.fila, pos.columna);
             }
+            
+            // Verificar victoria después de colocar la reina
+            if (verificarVictoria()) {
+                setTimeout(() => {
+                    mostrarMensajeVictoria();
+                }, 300);
+            }
         }
     } else {
         celda.innerHTML = "";
@@ -380,6 +510,7 @@ function cellClick(celda) {
         recalcularAtaques();
     }
 }
+
 // Reiniciar el tablero
 function resetBoard() {
     const tabla = document.querySelector('.tablero');
@@ -393,6 +524,7 @@ function resetBoard() {
     });
 
     contador = 0;
+    usandoSolucionPredefinida = false; // Resetear al reiniciar manualmente
     
     // Reiniciar colorOscuros a valores por defecto
     colorClaro = "#f5f5dc"; // beige
@@ -409,6 +541,7 @@ function resetBoard() {
 // Soluciones predefinidas para 8Reinas
 function solveEightQueens1() {
     resetBoard();
+    usandoSolucionPredefinida = true; // Marcar que se usó solución predefinida
     const positions = [0, 4, 7, 5, 2, 6, 1, 3];
     positions.forEach((col, row) => {
         const celda = obtenerCelda(row, col);
@@ -418,6 +551,7 @@ function solveEightQueens1() {
 
 function solveEightQueens2() {
     resetBoard();
+    usandoSolucionPredefinida = true; // Marcar que se usó solución predefinida
     const positions = [3, 1, 6, 4, 0, 7, 5, 2];
     positions.forEach((col, row) => {
         const celda = obtenerCelda(row, col);
@@ -427,6 +561,7 @@ function solveEightQueens2() {
 
 function solveEightQueens3() {
     resetBoard();
+    usandoSolucionPredefinida = true; // Marcar que se usó solución predefinida
     const positions = [5, 1, 6, 0, 3, 7, 4, 2];
     positions.forEach((col, row) => {
         const celda = obtenerCelda(row, col);

@@ -1,1 +1,605 @@
-eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('16 Q=0;16 14=1;16 M="#1h";16 L="#1i";l 1g(){a o=g.h(\'.F\');a C=o.t(\'V\');C.u((f,i)=>{a q=f.t(\'E\');q.u((9,j)=>{c((i+j)%2===0){9.H.15=M}T{9.H.15=L}})})}l W(){a o=g.h(\'.F\');a C=o.t(\'V\');C.u((f,i)=>{a q=f.t(\'E\');q.u((9,j)=>{c((i+j)%2===0){9.H.15=M}T{9.H.15=L}})})}l 1a(9){a o=g.h(\'.F\');a C=o.t(\'V\');R(D i=0;i<C.1n;i++){a q=C[i].t(\'E\');R(D j=0;j<q.1n;j++){c(q[j]===9){U{f:i,n:j}}}}U 1m}l r(f,n){a o=g.h(\'.F\');a C=o.t(\'V\');c(f>=0&&f<8&&n>=0&&n<8){U C[f].t(\'E\')[n]}U 1m}l 19(f,n){R(D j=0;j<8;j++){c(j!==n){a 9=r(f,j);c(9&&!9.d.k(\'p\')){9.d.v(\'s\');c(!9.h(\'.e-x\')){a b=g.B(\'A\');b.z=\'e-x\';b.y=\'★\';9.w(b)}}}}R(D i=0;i<8;i++){c(i!==f){a 9=r(i,n);c(9&&!9.d.k(\'p\')){9.d.v(\'s\');c(!9.h(\'.e-x\')){a b=g.B(\'A\');b.z=\'e-x\';b.y=\'★\';9.w(b)}}}}D i=f-1;D j=n-1;J(i>=0&&j>=0){a 9=r(i,j);c(9&&!9.d.k(\'p\')){9.d.v(\'s\');c(!9.h(\'.e-x\')){a b=g.B(\'A\');b.z=\'e-x\';b.y=\'★\';9.w(b)}}i--;j--}i=f-1;j=n+1;J(i>=0&&j<8){a 9=r(i,j);c(9&&!9.d.k(\'p\')){9.d.v(\'s\');c(!9.h(\'.e-x\')){a b=g.B(\'A\');b.z=\'e-x\';b.y=\'★\';9.w(b)}}i--;j++}i=f+1;j=n-1;J(i<8&&j>=0){a 9=r(i,j);c(9&&!9.d.k(\'p\')){9.d.v(\'s\');c(!9.h(\'.e-x\')){a b=g.B(\'A\');b.z=\'e-x\';b.y=\'★\';9.w(b)}}i++;j--}i=f+1;j=n+1;J(i<8&&j<8){a 9=r(i,j);c(9&&!9.d.k(\'p\')){9.d.v(\'s\');c(!9.h(\'.e-x\')){a b=g.B(\'A\');b.z=\'e-x\';b.y=\'★\';9.w(b)}}i++;j++}}l 1l(){a o=g.h(\'.F\');a q=o.t(\'E\');q.u(9=>{9.d.K(\'s\');a b=9.h(\'.e-x\');c(b){b.K()}})}l 1j(){1l();a o=g.h(\'.F\');a C=o.t(\'V\');C.u((f,i)=>{a q=f.t(\'E\');q.u((9,j)=>{c(9.d.k(\'p\')){19(i,j)}})})}l 1k(f,n){R(D j=0;j<8;j++){c(j!==n){a 9=r(f,j);c(9&&!9.d.k(\'p\')&&!9.d.k(\'s\')){9.d.v(\'m-G\');c(!9.h(\'.e-x-m\')){a b=g.B(\'A\');b.z=\'e-x-m\';b.y=\'★\';9.w(b)}}}}R(D i=0;i<8;i++){c(i!==f){a 9=r(i,n);c(9&&!9.d.k(\'p\')&&!9.d.k(\'s\')){9.d.v(\'m-G\');c(!9.h(\'.e-x-m\')){a b=g.B(\'A\');b.z=\'e-x-m\';b.y=\'★\';9.w(b)}}}}D i=f-1;D j=n-1;J(i>=0&&j>=0){a 9=r(i,j);c(9&&!9.d.k(\'p\')&&!9.d.k(\'s\')){9.d.v(\'m-G\');c(!9.h(\'.e-x-m\')){a b=g.B(\'A\');b.z=\'e-x-m\';b.y=\'★\';9.w(b)}}i--;j--}i=f-1;j=n+1;J(i>=0&&j<8){a 9=r(i,j);c(9&&!9.d.k(\'p\')&&!9.d.k(\'s\')){9.d.v(\'m-G\');c(!9.h(\'.e-x-m\')){a b=g.B(\'A\');b.z=\'e-x-m\';b.y=\'★\';9.w(b)}}i--;j++}i=f+1;j=n-1;J(i<8&&j>=0){a 9=r(i,j);c(9&&!9.d.k(\'p\')&&!9.d.k(\'s\')){9.d.v(\'m-G\');c(!9.h(\'.e-x-m\')){a b=g.B(\'A\');b.z=\'e-x-m\';b.y=\'★\';9.w(b)}}i++;j--}i=f+1;j=n+1;J(i<8&&j<8){a 9=r(i,j);c(9&&!9.d.k(\'p\')&&!9.d.k(\'s\')){9.d.v(\'m-G\');c(!9.h(\'.e-x-m\')){a b=g.B(\'A\');b.z=\'e-x-m\';b.y=\'★\';9.w(b)}}i++;j++}}l 1b(){a o=g.h(\'.F\');a q=o.t(\'E\');q.u(9=>{9.d.K(\'m-G\');a b=9.h(\'.e-x-m\');c(b){b.K()}})}l 1e(9){c(!9.d.k(\'p\')&&!9.d.k(\'s\')&&Q<8){a I=1a(9);c(I){1k(I.f,I.n)}}}l 1d(){1b()}l 11(9){c(9.d.k(\'s\')){U}c(!9.d.k(\'p\')){c(Q<8){9.18="&#1D;";9.d.v(\'p\');c(14==1){9.H.13="1c(1C, 1B, 1A)"}T c(14==2){9.H.13="1c(1z, 1y, 1x)"}T c(14==3){9.H.13="1c(1w, 1v, 1u)"}Q++;1b();a I=1a(9);c(I){19(I.f,I.n)}}}T{9.18="";9.d.K(\'p\');9.H.13="";Q--;1j()}}l 12(){a o=g.h(\'.F\');a q=o.t(\'E\');q.u(9=>{9.18="";9.d.K(\'p\',\'s\',\'m-G\');a b=9.h(\'.e-x\');c(b)b.K()});Q=0;L="#1i";M="#1h";g.Z(\'10\').X=M;g.Z(\'Y\').X=L;W()}l 1t(){12();a P=[0,4,7,5,2,6,1,3];P.u((N,O)=>{a 9=r(O,N);11(9)})}l 1s(){12();a P=[3,1,6,4,0,7,5,2];P.u((N,O)=>{a 9=r(O,N);11(9)})}l 1r(){12();a P=[5,1,6,0,3,7,4,2];P.u((N,O)=>{a 9=r(O,N);11(9)})}g.S(\'1q\',l(){1g();a 10=g.Z(\'10\');10.S(\'1f\',l(){M=17.X;W()});a Y=g.Z(\'Y\');Y.S(\'1f\',l(){L=17.X;W()});a o=g.h(\'.F\');a q=o.t(\'E\');q.u(9=>{9.S(\'1p\',l(){1e(17)});9.S(\'1o\',l(){1d()})})});',62,102,'|||||||||celda|const|marcaX|if|classList|marca|fila|document|querySelector|||contains|function|preview|columna|tabla|reina|celdas|obtenerCelda|atacada|querySelectorAll|forEach|add|appendChild||textContent|className|span|createElement|filas|let|td|tablero|ataque|style|pos|while|remove|colorClaro|colorOscuro|col|row|positions|contador|for|addEventListener|else|return|tr|actualizarcolorOscurosTablero|value|color2|getElementById|color1|cellClick|resetBoard|color|colorReina|backgroundColor|var|this|innerHTML|marcarAtaques|obtenerPosicion|limpiarPreviewAtaques|rgb|cellLeave|cellHover|input|inicializarTablero|ffc0cb|f5f5dc|recalcularAtaques|marcarPreviewAtaques|limpiarAtaques|null|length|mouseleave|mouseenter|DOMContentLoaded|solveEightQueens3|solveEightQueens2|solveEightQueens1|34|26|90|72|61|155|117|98|236|9819'.split('|'),0,{}))
+var contador = 0;
+var colorReina = 1;
+var colorOscuro = "#ffc0cb"; // pink
+var colorClaro = "#f5f5dc"; // beige
+var usandoSolucionPredefinida = false; // Nueva variable para detectar soluciones predefinidas
+
+// Inicializar el tablero con colorOscuros por defecto
+function inicializarTablero() {
+    const tabla = document.querySelector('.tablero');
+    const filas = tabla.querySelectorAll('tr');
+    
+    filas.forEach((fila, i) => {
+        const celdas = fila.querySelectorAll('td');
+        celdas.forEach((celda, j) => {
+            if ((i + j) % 2 === 0) {
+                celda.style.backgroundColor = colorOscuro;
+            } else {
+                celda.style.backgroundColor = colorClaro;
+            }
+        });
+    });
+}
+
+// Actualizar colorOscuros del tablero
+function actualizarcolorOscurosTablero() {
+    const tabla = document.querySelector('.tablero');
+    const filas = tabla.querySelectorAll('tr');
+    
+    filas.forEach((fila, i) => {
+        const celdas = fila.querySelectorAll('td');
+        celdas.forEach((celda, j) => {
+            if ((i + j) % 2 === 0) {
+                celda.style.backgroundColor = colorOscuro;
+            } else {
+                celda.style.backgroundColor = colorClaro;
+            }
+        });
+    });
+}
+
+// Obtener la posición de una celda
+function obtenerPosicion(celda) {
+    const tabla = document.querySelector('.tablero');
+    const filas = tabla.querySelectorAll('tr');
+    
+    for (let i = 0; i < filas.length; i++) {
+        const celdas = filas[i].querySelectorAll('td');
+        for (let j = 0; j < celdas.length; j++) {
+            if (celdas[j] === celda) {
+                return { fila: i, columna: j };
+            }
+        }
+    }
+    return null;
+}
+
+// Obtener celda por posición
+function obtenerCelda(fila, columna) {
+    const tabla = document.querySelector('.tablero');
+    const filas = tabla.querySelectorAll('tr');
+    
+    if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
+        return filas[fila].querySelectorAll('td')[columna];
+    }
+    return null;
+}
+
+// Marcar casillas atacadas por una reina
+function marcarAtaques(fila, columna) {
+    // Marcar fila
+    for (let j = 0; j < 8; j++) {
+        if (j !== columna) {
+            const celda = obtenerCelda(fila, j);
+            if (celda && !celda.classList.contains('reina')) {
+                celda.classList.add('atacada');
+                if (!celda.querySelector('.marca-x')) {
+                    const marcaX = document.createElement('span');
+                    marcaX.className = 'marca-x';
+                    marcaX.textContent = '★';
+                    celda.appendChild(marcaX);
+                }
+            }
+        }
+    }
+    
+    // Marcar columna
+    for (let i = 0; i < 8; i++) {
+        if (i !== fila) {
+            const celda = obtenerCelda(i, columna);
+            if (celda && !celda.classList.contains('reina')) {
+                celda.classList.add('atacada');
+                if (!celda.querySelector('.marca-x')) {
+                    const marcaX = document.createElement('span');
+                    marcaX.className = 'marca-x';
+                    marcaX.textContent = '★';
+                    celda.appendChild(marcaX);
+                }
+            }
+        }
+    }
+    
+    // Marcar diagonal superior izquierda
+    let i = fila - 1;
+    let j = columna - 1;
+    while (i >= 0 && j >= 0) {
+        const celda = obtenerCelda(i, j);
+        if (celda && !celda.classList.contains('reina')) {
+            celda.classList.add('atacada');
+            if (!celda.querySelector('.marca-x')) {
+                const marcaX = document.createElement('span');
+                marcaX.className = 'marca-x';
+                marcaX.textContent = '★';
+                celda.appendChild(marcaX);
+            }
+        }
+        i--;
+        j--;
+    }
+    
+    // Marcar diagonal superior derecha
+    i = fila - 1;
+    j = columna + 1;
+    while (i >= 0 && j < 8) {
+        const celda = obtenerCelda(i, j);
+        if (celda && !celda.classList.contains('reina')) {
+            celda.classList.add('atacada');
+            if (!celda.querySelector('.marca-x')) {
+                const marcaX = document.createElement('span');
+                marcaX.className = 'marca-x';
+                marcaX.textContent = '★';
+                celda.appendChild(marcaX);
+            }
+        }
+        i--;
+        j++;
+    }
+    
+    // Marcar diagonal inferior izquierda
+    i = fila + 1;
+    j = columna - 1;
+    while (i < 8 && j >= 0) {
+        const celda = obtenerCelda(i, j);
+        if (celda && !celda.classList.contains('reina')) {
+            celda.classList.add('atacada');
+            if (!celda.querySelector('.marca-x')) {
+                const marcaX = document.createElement('span');
+                marcaX.className = 'marca-x';
+                marcaX.textContent = '★';
+                celda.appendChild(marcaX);
+            }
+        }
+        i++;
+        j--;
+    }
+    
+    // Marcar diagonal inferior derecha
+    i = fila + 1;
+    j = columna + 1;
+    while (i < 8 && j < 8) {
+        const celda = obtenerCelda(i, j);
+        if (celda && !celda.classList.contains('reina')) {
+            celda.classList.add('atacada');
+            if (!celda.querySelector('.marca-x')) {
+                const marcaX = document.createElement('span');
+                marcaX.className = 'marca-x';
+                marcaX.textContent = '★';
+                celda.appendChild(marcaX);
+            }
+        }
+        i++;
+        j++;
+    }
+}
+
+// Limpiar todas las marcas de ataque
+function limpiarAtaques() {
+    const tabla = document.querySelector('.tablero');
+    const celdas = tabla.querySelectorAll('td');
+    
+    celdas.forEach(celda => {
+        celda.classList.remove('atacada');
+        const marcaX = celda.querySelector('.marca-x');
+        if (marcaX) {
+            marcaX.remove();
+        }
+    });
+}
+
+// Recalcular todos los ataques
+function recalcularAtaques() {
+    limpiarAtaques();
+    
+    const tabla = document.querySelector('.tablero');
+    const filas = tabla.querySelectorAll('tr');
+    
+    filas.forEach((fila, i) => {
+        const celdas = fila.querySelectorAll('td');
+        celdas.forEach((celda, j) => {
+            if (celda.classList.contains('reina')) {
+                marcarAtaques(i, j);
+            }
+        });
+    });
+}
+
+// Marcar preview de ataques (hover)
+function marcarPreviewAtaques(fila, columna) {
+    // Marcar fila
+    for (let j = 0; j < 8; j++) {
+        if (j !== columna) {
+            const celda = obtenerCelda(fila, j);
+            if (celda && !celda.classList.contains('reina') && !celda.classList.contains('atacada')) {
+                celda.classList.add('preview-ataque');
+                if (!celda.querySelector('.marca-x-preview')) {
+                    const marcaX = document.createElement('span');
+                    marcaX.className = 'marca-x-preview';
+                    marcaX.textContent = '★';
+                    celda.appendChild(marcaX);
+                }
+            }
+        }
+    }
+    
+    // Marcar columna
+    for (let i = 0; i < 8; i++) {
+        if (i !== fila) {
+            const celda = obtenerCelda(i, columna);
+            if (celda && !celda.classList.contains('reina') && !celda.classList.contains('atacada')) {
+                celda.classList.add('preview-ataque');
+                if (!celda.querySelector('.marca-x-preview')) {
+                    const marcaX = document.createElement('span');
+                    marcaX.className = 'marca-x-preview';
+                    marcaX.textContent = '★';
+                    celda.appendChild(marcaX);
+                }
+            }
+        }
+    }
+    
+    // Marcar diagonal superior izquierda
+    let i = fila - 1;
+    let j = columna - 1;
+    while (i >= 0 && j >= 0) {
+        const celda = obtenerCelda(i, j);
+        if (celda && !celda.classList.contains('reina') && !celda.classList.contains('atacada')) {
+            celda.classList.add('preview-ataque');
+            if (!celda.querySelector('.marca-x-preview')) {
+                const marcaX = document.createElement('span');
+                marcaX.className = 'marca-x-preview';
+                marcaX.textContent = '★';
+                celda.appendChild(marcaX);
+            }
+        }
+        i--;
+        j--;
+    }
+    
+    // Marcar diagonal superior derecha
+    i = fila - 1;
+    j = columna + 1;
+    while (i >= 0 && j < 8) {
+        const celda = obtenerCelda(i, j);
+        if (celda && !celda.classList.contains('reina') && !celda.classList.contains('atacada')) {
+            celda.classList.add('preview-ataque');
+            if (!celda.querySelector('.marca-x-preview')) {
+                const marcaX = document.createElement('span');
+                marcaX.className = 'marca-x-preview';
+                marcaX.textContent = '★';
+                celda.appendChild(marcaX);
+            }
+        }
+        i--;
+        j++;
+    }
+    
+    // Marcar diagonal inferior izquierda
+    i = fila + 1;
+    j = columna - 1;
+    while (i < 8 && j >= 0) {
+        const celda = obtenerCelda(i, j);
+        if (celda && !celda.classList.contains('reina') && !celda.classList.contains('atacada')) {
+            celda.classList.add('preview-ataque');
+            if (!celda.querySelector('.marca-x-preview')) {
+                const marcaX = document.createElement('span');
+                marcaX.className = 'marca-x-preview';
+                marcaX.textContent = '★';
+                celda.appendChild(marcaX);
+            }
+        }
+        i++;
+        j--;
+    }
+    
+    // Marcar diagonal inferior derecha
+    i = fila + 1;
+    j = columna + 1;
+    while (i < 8 && j < 8) {
+        const celda = obtenerCelda(i, j);
+        if (celda && !celda.classList.contains('reina') && !celda.classList.contains('atacada')) {
+            celda.classList.add('preview-ataque');
+            if (!celda.querySelector('.marca-x-preview')) {
+                const marcaX = document.createElement('span');
+                marcaX.className = 'marca-x-preview';
+                marcaX.textContent = '★';
+                celda.appendChild(marcaX);
+            }
+        }
+        i++;
+        j++;
+    }
+}
+
+// Limpiar preview de ataques
+function limpiarPreviewAtaques() {
+    const tabla = document.querySelector('.tablero');
+    const celdas = tabla.querySelectorAll('td');
+    
+    celdas.forEach(celda => {
+        celda.classList.remove('preview-ataque');
+        const marcaX = celda.querySelector('.marca-x-preview');
+        if (marcaX) {
+            marcaX.remove();
+        }
+    });
+}
+
+// Manejar hover sobre celdas
+function cellHover(celda) {
+    // Solo mostrar preview si la celda está vacía y no atacada
+    if (!celda.classList.contains('reina') && !celda.classList.contains('atacada') && contador < 8) {
+        const pos = obtenerPosicion(celda);
+        if (pos) {
+            marcarPreviewAtaques(pos.fila, pos.columna);
+        }
+    }
+}
+
+// Manejar cuando el mouse sale de una celda
+function cellLeave() {
+    limpiarPreviewAtaques();
+}
+
+// Verificar si hay reinas atacándose entre sí
+function verificarVictoria() {
+    // Solo verificar si hay exactamente 8 reinas y no se usó solución predefinida
+    if (contador !== 8 || usandoSolucionPredefinida) {
+        return false;
+    }
+    
+    const tabla = document.querySelector('.tablero');
+    const filas = tabla.querySelectorAll('tr');
+    const posicionesReinas = [];
+    
+    // Obtener todas las posiciones de las reinas
+    filas.forEach((fila, i) => {
+        const celdas = fila.querySelectorAll('td');
+        celdas.forEach((celda, j) => {
+            if (celda.classList.contains('reina')) {
+                posicionesReinas.push({ fila: i, columna: j });
+            }
+        });
+    });
+    
+    // Verificar que ninguna reina ataque a otra
+    for (let i = 0; i < posicionesReinas.length; i++) {
+        for (let j = i + 1; j < posicionesReinas.length; j++) {
+            const reina1 = posicionesReinas[i];
+            const reina2 = posicionesReinas[j];
+            
+            // Misma fila
+            if (reina1.fila === reina2.fila) return false;
+            
+            // Misma columna
+            if (reina1.columna === reina2.columna) return false;
+            
+            // Misma diagonal
+            if (Math.abs(reina1.fila - reina2.fila) === Math.abs(reina1.columna - reina2.columna)) {
+                return false;
+            }
+        }
+    }
+    
+    return true;
+}
+
+// Mostrar mensaje de victoria
+function mostrarMensajeVictoria() {
+    // Crear overlay oscuro
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        animation: fadeIn 0.3s ease;
+    `;
+    
+    // Crear mensaje
+    const mensaje = document.createElement('div');
+    mensaje.style.cssText = `
+        background: linear-gradient(90deg, #ff69b4 0%, #ff1493 50%, #ff69b4 100%);
+        padding: 40px 60px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(255, 105, 180, 0.5);
+        text-align: center;
+        animation: slideIn 0.5s ease;
+    `;
+    
+    mensaje.innerHTML = `
+        <h2 style="color: white; font-size: 48px; margin: 0 0 20px 0; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+            ¡HAS GANADO! ☆
+        </h2>
+        <p style="color: white; font-size: 20px; margin: 0 0 25px 0; font-family: Arial, sans-serif;">
+            ¡Felicidades! :3
+            Has resuelto el desafío de las 8 reinas
+        </p>
+        <button onclick="cerrarMensajeVictoria()" style="
+            padding: 12px 30px;
+            font-size: 16px;
+            background: white;
+            color: #ff1493;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            Continuar
+        </button>
+    `;
+    
+    overlay.appendChild(mensaje);
+    document.body.appendChild(overlay);
+    
+    // Agregar estilos de animación
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Cerrar mensaje de victoria
+function cerrarMensajeVictoria() {
+    const overlay = document.querySelector('div[style*="position: fixed"]');
+    if (overlay) {
+        overlay.remove();
+    }
+}
+
+// Función para colocar/quitar reinas
+function cellClick(celda) {
+    // No permitir colocar reina en casilla atacada
+    if (celda.classList.contains('atacada')) {
+        return;
+    }
+    
+    if (!celda.classList.contains('reina')) {
+        if (contador < 8) {
+            celda.innerHTML = "&#9819;";
+            celda.classList.add('reina');
+            
+            if (colorReina == 1) {
+                celda.style.color = "rgb(236, 98, 117)";
+            } else if (colorReina == 2) {
+                celda.style.color = "rgb(155, 61, 72)";
+            } else if (colorReina == 3) {
+                celda.style.color = "rgb(90, 26, 34)";
+            }
+            
+            contador++;
+            
+            // Limpiar preview antes de marcar ataques permanentes
+            limpiarPreviewAtaques();
+            
+            // Marcar casillas atacadas
+            const pos = obtenerPosicion(celda);
+            if (pos) {
+                marcarAtaques(pos.fila, pos.columna);
+            }
+            
+            // Verificar victoria después de colocar la reina
+            if (verificarVictoria()) {
+                setTimeout(() => {
+                    mostrarMensajeVictoria();
+                }, 300);
+            }
+        }
+    } else {
+        celda.innerHTML = "";
+        celda.classList.remove('reina');
+        celda.style.color = "";
+        contador--;
+        
+        // Recalcular ataques
+        recalcularAtaques();
+    }
+}
+
+// Reiniciar el tablero
+function resetBoard() {
+    const tabla = document.querySelector('.tablero');
+    const celdas = tabla.querySelectorAll('td');
+
+    celdas.forEach(celda => {
+        celda.innerHTML = "";
+        celda.classList.remove('reina', 'atacada', 'preview-ataque');
+        const marcaX = celda.querySelector('.marca-x');
+        if (marcaX) marcaX.remove();
+    });
+
+    contador = 0;
+    usandoSolucionPredefinida = false; // Resetear al reiniciar manualmente
+    
+    // Reiniciar colorOscuros a valores por defecto
+    colorClaro = "#f5f5dc"; // beige
+    colorOscuro = "#ffc0cb"; // pink
+    
+    // Actualizar los selectores de color
+    document.getElementById('color1').value = colorOscuro;
+    document.getElementById('color2').value = colorClaro;
+    
+    // Aplicar los colorOscuros al tablero
+    actualizarcolorOscurosTablero();
+}
+
+// Soluciones predefinidas para 8Reinas
+function solveEightQueens1() {
+    resetBoard();
+    usandoSolucionPredefinida = true; // Marcar que se usó solución predefinida
+    const positions = [0, 4, 7, 5, 2, 6, 1, 3];
+    positions.forEach((col, row) => {
+        const celda = obtenerCelda(row, col);
+        cellClick(celda);
+    });
+}
+
+function solveEightQueens2() {
+    resetBoard();
+    usandoSolucionPredefinida = true; // Marcar que se usó solución predefinida
+    const positions = [3, 1, 6, 4, 0, 7, 5, 2];
+    positions.forEach((col, row) => {
+        const celda = obtenerCelda(row, col);
+        cellClick(celda);
+    });
+}
+
+function solveEightQueens3() {
+    resetBoard();
+    usandoSolucionPredefinida = true; // Marcar que se usó solución predefinida
+    const positions = [5, 1, 6, 0, 3, 7, 4, 2];
+    positions.forEach((col, row) => {
+        const celda = obtenerCelda(row, col);
+        cellClick(celda);
+    });
+}
+
+// Event listeners para los selectores de color
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar el tablero
+    inicializarTablero();
+    
+    // Listener para color claro
+    const color1 = document.getElementById('color1');
+    color1.addEventListener('input', function() {
+        colorOscuro = this.value;
+        actualizarcolorOscurosTablero();
+    });
+    
+    // Listener para color oscuro
+    const color2 = document.getElementById('color2');
+    color2.addEventListener('input', function() {
+        colorClaro = this.value;
+        actualizarcolorOscurosTablero();
+    });
+    
+    // Agregar event listeners de hover a todas las celdas
+    const tabla = document.querySelector('.tablero');
+    const celdas = tabla.querySelectorAll('td');
+    
+    celdas.forEach(celda => {
+        celda.addEventListener('mouseenter', function() {
+            cellHover(this);
+        });
+        
+        celda.addEventListener('mouseleave', function() {
+            cellLeave();
+        });
+    });
+    
+});
