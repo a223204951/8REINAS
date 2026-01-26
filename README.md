@@ -25,7 +25,7 @@ La aplicación permite al usuario intentar resolver el puzzle manualmente median
 | :--- | :--- |
 | **👆 Point and Click** | Mecánica fluida para colocar reinas dando click. |
 | **🛡️ Validación Lógica** | El sistema impide colocar una reina si está siendo atacada (reglas de ajedrez). |
-| **🔴 Visualización de Ataques** | Las celdas amenazadas se iluminan en rojo y bloquean el cursor. |
-| **🎨 Temas Personalizables** | Selección de colores para el tablero y skins (apariencia) para las reinas. |
+| **🔴 Visualización de Ataques** | Las celdas amenazadas se marcan y bloquean el cursor. |
+| **🎨 Temas Personalizables** | Selección de colores para el tablero y skins para las reinas. |
 | **🤖 Soluciones Automáticas** | Incluye 3 botones para cargar soluciones válidas instantáneamente. |
 | **🔒 Código Seguro** | Lógica de JavaScript ofuscada para protección intelectual en producción. |
